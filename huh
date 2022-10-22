@@ -1,0 +1,2 @@
+#!/bin/bash
+wget --delete-after --page-requisites --report-speed=bits https://blog.adafruit.com/ |& tail -3 
