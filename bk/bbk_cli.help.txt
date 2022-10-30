@@ -1,0 +1,57 @@
+bbk_cli: invalid argument -- -?
+Usage: bbk_cli [OPTION]...
+
+Options:
+
+  --help              Show this help text
+  --version           Print version number and exit
+
+Network related options:
+  --v6                Prefer IPv6 (default is IPv4)
+  --proxy-host=HOST   Use HTTP proxy server HOST
+  --proxy-port=PORT   Use port PORT on proxy server (default 80)
+
+Measurement configuration:
+  --server=HOST       Use HOST as measurement server
+  --port=N            Port number for measurement server, default 80
+  --duration=N        Measure upload/download for N seconds (2-10, default 10)
+  --speedlimit=N      Keep upload/download speed below N mbps on average
+
+Measurement type:
+  --live              Measure using Bredbandskollen's live servers (default)
+  --test              Measure using Bredbandskollen's development servers
+  --local             Don't use Bredbandskollen's servers,
+                      instead use server given by the --server option
+  --run-server        Run as a measurement server (requires option --listen=PORT)
+
+Logging:
+  --log=FILENAME      Write debug log to FILENAME
+                      (log to stderr if FILENAME is -)
+
+Finding measurement servers:
+  --check-servers     Find closest measurement server
+
+List previous measurements:
+  --measurements      List 10 last measurements
+  --measurements=N    List N last measurements
+                      If --quiet, output will be JSON. Otherwise
+                      output will be lines with tab separated fields.
+  --from-id=N         List only measurements before ID N
+
+Browser interface:
+  --browser           Use a web browser as interface
+  --listen=PORT       Use web browser as interface;
+                      the browser must connect to the given PORT
+  --listen-addr=IP    When listening, bind socket to ip address IP
+                      (default is 127.0.0.1) to use a web browser on
+                      a remote host as interface
+                      Note: this may not work due to e.g. firewalls.
+                      Don't use it unless you know what you are doing.
+  --listen-pw=PW      Use PW as a one-time password when connecting from browser
+                      Note: DO NOT reuse a sensitive password here! It is better to omit this option
+                      because by default, a sceure one-time password will be generated.
+
+Command line interface:
+  --quiet             Write a single line of output
+  --out=FILENAME      Append output to FILENAME instead of stdout
+
